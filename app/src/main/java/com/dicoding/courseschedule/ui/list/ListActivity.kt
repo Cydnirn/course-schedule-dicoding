@@ -17,6 +17,8 @@ import com.dicoding.courseschedule.R
 import com.dicoding.courseschedule.data.Course
 import com.dicoding.courseschedule.paging.CourseAdapter
 import com.dicoding.courseschedule.paging.CourseViewHolder
+import com.dicoding.courseschedule.ui.detail.DetailActivity
+import com.dicoding.courseschedule.ui.detail.DetailActivity.Companion.COURSE_ID
 import com.dicoding.courseschedule.ui.setting.SettingsActivity
 import com.dicoding.courseschedule.util.SortType
 
@@ -50,7 +52,10 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun onCourseClick(course: Course) {
-        //TODO 8 : Intent and show detailed course
+        //TODO 8 : Intent and show detailed course (DONE)
+        val detailIntent = Intent(this, DetailActivity::class.java)
+        detailIntent.putExtra(COURSE_ID, course.id)
+        startActivity(detailIntent)
     }
 
     private fun initAction() {
