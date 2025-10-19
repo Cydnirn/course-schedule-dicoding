@@ -19,6 +19,8 @@ preferenceKtx = "1.2.1"
 paging3Ktx = "3.3.2"
 testOrchestrator = "1.4.2"
 kaspresso = "1.5.3"
+navigationFragmentKtx = "2.9.3"
+navigationUiKtx = "2.9.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -48,6 +50,8 @@ androidx-test-runner = { group = "androidx.test", name = "runner", version.ref =
 
 androidx-test-orchestrator = { group = "androidx.test", name = "orchestrator", version.ref = "testOrchestrator" }
 kaspresso = { group = "com.kaspersky.android-components", name = "kaspresso", version.ref = "kaspresso" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

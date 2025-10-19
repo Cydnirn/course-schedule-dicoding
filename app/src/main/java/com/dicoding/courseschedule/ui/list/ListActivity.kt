@@ -21,6 +21,7 @@ import com.dicoding.courseschedule.ui.detail.DetailActivity
 import com.dicoding.courseschedule.ui.detail.DetailActivity.Companion.COURSE_ID
 import com.dicoding.courseschedule.ui.setting.SettingsActivity
 import com.dicoding.courseschedule.util.SortType
+import kotlin.jvm.java
 
 class ListActivity : AppCompatActivity() {
 
@@ -78,7 +79,12 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun setFabClick() {
-        //TODO 9 : Create AddCourseActivity to set new course schedule
+        //TODO 9 : Create AddCourseActivity to set new course schedule (DONE)
+        val fab: View = findViewById(R.id.fab)
+        fab.setOnClickListener {
+            val intent = Intent(this, AddCourseActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     //TODO 14 : Fixing bug : sort menu not show and course not deleted when list is swiped
