@@ -18,7 +18,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.root_preferences, rootKey)
-        //TODO 10 : Update theme based on value in ListPreference
+        //TODO 10 : Update theme based on value in ListPreference (DONE)
         init()
         themePreference.setOnPreferenceChangeListener { _, newValue ->
             when (newValue) {
@@ -28,7 +28,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 else -> false
             }
         }
-        //TODO 11 : Schedule and cancel notification in DailyReminder based on SwitchPreference
+        //TODO 11 : Schedule and cancel notification in DailyReminder based on SwitchPreference (DONE)
         notificationPreference.setOnPreferenceChangeListener { _, newValue ->
             val isEnabled = newValue as Boolean
             val dailyReminder = DailyReminder()
