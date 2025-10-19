@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,7 +22,6 @@ import com.dicoding.courseschedule.ui.detail.DetailActivity
 import com.dicoding.courseschedule.ui.detail.DetailActivity.Companion.COURSE_ID
 import com.dicoding.courseschedule.ui.setting.SettingsActivity
 import com.dicoding.courseschedule.util.SortType
-import kotlinx.coroutines.launch
 import kotlin.jvm.java
 
 class ListActivity : AppCompatActivity() {

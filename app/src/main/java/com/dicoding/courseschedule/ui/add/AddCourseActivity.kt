@@ -7,10 +7,6 @@ import android.view.View
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.dicoding.courseschedule.R
 import com.dicoding.courseschedule.databinding.ActivityAddCourseBinding
 import com.dicoding.courseschedule.util.TimePickerFragment

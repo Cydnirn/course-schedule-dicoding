@@ -38,7 +38,7 @@ class DataRepository(private val dao: CourseDao) {
     }
 
     fun getTodaySchedule() : List<Course> {
-        val day = Calendar.getInstance().get(java.util.Calendar.DAY_OF_WEEK)
+        val day = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
         return dao.getTodaySchedule(day)
     }
 
