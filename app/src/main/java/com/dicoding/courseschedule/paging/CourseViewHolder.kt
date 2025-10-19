@@ -12,7 +12,7 @@ class CourseViewHolder(view: View): RecyclerView.ViewHolder(view) {
     private lateinit var course: Course
     private val timeString = itemView.context.resources.getString(R.string.time_format)
 
-    //TODO 7 : Complete ViewHolder to show item
+    //TODO 7 : Complete ViewHolder to show item (DONE)
     private val tvCourse: TextView = itemView.findViewById(R.id.tv_course)
     private val tvTime: TextView = itemView.findViewById(R.id.tv_time)
     private val tvLecturer: TextView = itemView.findViewById(R.id.tv_lecturer)
