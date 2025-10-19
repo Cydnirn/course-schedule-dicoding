@@ -3,7 +3,7 @@ package com.dicoding.courseschedule.ui.add
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
+import androidx.activity.enableEdgeToEdge
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -21,12 +21,22 @@ class AddCourseActivity : AppCompatActivity(), TimePickerFragment.DialogTimeList
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityAddCourseBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        setSupportActionBar(findViewById(R.id.add_toolbar))
+        supportActionBar?.title = resources.getString(R.string.app_name)
         val factory = AddCourseViewModelFactory.createFactory(this)
         addCourseViewModel = ViewModelProvider(this, factory)[AddCourseViewModel::class.java]
+
+        binding.addIbStartTime.setOnClickListener { view ->
+            val timePickerFragment = TimePickerFragment()
+            timePickerFragment.show(supportFragmentManager, "startTimePicker")
+        }
+
+        binding.addIbEndTime.setOnClickListener { view ->
+            val timePickerFragment = TimePickerFragment()
+            timePickerFragment.show(supportFragmentManager, "endTimePicker")
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -67,20 +77,6 @@ class AddCourseActivity : AppCompatActivity(), TimePickerFragment.DialogTimeList
                 true
             }
             else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    fun showTimePicker(view: View){
-        val timePickerFragment = TimePickerFragment()
-        when (view.id) {
-            R.id.add_ib_start_time -> timePickerFragment.show(
-                supportFragmentManager,
-                "startTimePicker"
-            )
-            R.id.add_ib_end_time -> timePickerFragment.show(
-                supportFragmentManager,
-                "endTimePicker"
-            )
         }
     }
 
