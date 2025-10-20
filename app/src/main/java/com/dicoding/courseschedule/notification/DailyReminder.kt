@@ -92,7 +92,7 @@ class DailyReminder : BroadcastReceiver() {
 
         val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
-        val builder = NotificationCompat.Builder(context, "daily_reminder_channel")
+        val builder = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notifications)
             .setContentTitle(context.resources.getString(R.string.today_schedule))
             .setStyle(notificationStyle)
@@ -101,19 +101,20 @@ class DailyReminder : BroadcastReceiver() {
             .setContentIntent(pendingIntent)
             .setAutoCancel(true)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
+
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             val channel = NotificationChannel(
-                "daily_reminder_channel",
+                NOTIFICATION_CHANNEL_ID,
                 "Daily Reminder Channel",
                 NotificationManager.IMPORTANCE_HIGH
             ).apply {
                 description = "Channel for Daily Reminder"
+                enableVibration(true)
+                vibrationPattern = longArrayOf(1000, 1000, 1000, 1000, 1000)
             }
-            channel.enableVibration(true)
-            channel.vibrationPattern = longArrayOf(1000, 1000, 1000, 1000, 1000)
-            builder.setChannelId(NOTIFICATION_CHANNEL_ID)
             notificationManager.createNotificationChannel(channel)
         }
+
         val notification = builder.build()
         notificationManager.notify(NOTIFICATION_ID, notification)
     }
