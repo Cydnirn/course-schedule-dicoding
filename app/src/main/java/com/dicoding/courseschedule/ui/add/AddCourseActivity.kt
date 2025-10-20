@@ -23,7 +23,6 @@ class AddCourseActivity : AppCompatActivity(), TimePickerFragment.DialogTimeList
         super.onCreate(savedInstanceState)
         binding = ActivityAddCourseBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(findViewById(R.id.add_toolbar))
         supportActionBar?.title = resources.getString(R.string.app_name)
         val factory = AddCourseViewModelFactory.createFactory(this)
         addCourseViewModel = ViewModelProvider(this, factory)[AddCourseViewModel::class.java]

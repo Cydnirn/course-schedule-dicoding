@@ -16,6 +16,7 @@
         <activity
             android:name=".ui.add.AddCourseActivity"
             android:exported="false"
+            android:parentActivityName=".ui.home.HomeActivity"
             android:theme="@style/Theme.CourseSchedule" />
         <activity
             android:name=".ui.detail.DetailActivity"
@@ -33,7 +34,8 @@
             />
         <activity
             android:name=".ui.home.HomeActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.CourseSchedule">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

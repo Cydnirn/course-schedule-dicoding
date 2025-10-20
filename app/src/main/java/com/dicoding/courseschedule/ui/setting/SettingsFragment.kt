@@ -21,9 +21,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
         init()
         themePreference.setOnPreferenceChangeListener { _, newValue ->
             when (newValue) {
-                "light" -> updateTheme(AppCompatDelegate.MODE_NIGHT_NO)
-                "dark" -> updateTheme(AppCompatDelegate.MODE_NIGHT_YES)
-                "system" -> updateTheme(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                "off" -> updateTheme(AppCompatDelegate.MODE_NIGHT_NO)
+                "on" -> updateTheme(AppCompatDelegate.MODE_NIGHT_YES)
+                "auto" -> updateTheme(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
                 else -> false
             }
         }
@@ -42,6 +42,12 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     private fun updateTheme(nightMode: Int): Boolean {
         AppCompatDelegate.setDefaultNightMode(nightMode)
+        themePreference.value = when (nightMode) {
+            AppCompatDelegate.MODE_NIGHT_NO -> "off"
+            AppCompatDelegate.MODE_NIGHT_YES -> "on"
+            AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM -> "auto"
+            else -> "auto"
+        }
         requireActivity().recreate()
         return true
     }
