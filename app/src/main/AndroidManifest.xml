@@ -16,8 +16,7 @@
         <activity
             android:name=".ui.add.AddCourseActivity"
             android:exported="false"
-            android:parentActivityName=".ui.home.HomeActivity"
-            android:theme="@style/Theme.CourseSchedule" />
+            android:parentActivityName=".ui.home.HomeActivity"/>
         <activity
             android:name=".ui.detail.DetailActivity"
             android:label="@string/detail"

@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.CourseSchedule" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.CourseSchedule" parent="Theme.MaterialComponents.DayNight">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -14,9 +14,13 @@
         <item name="actionBarStyle">@style/Theme.CourseSchedule.ActionBar</item>
     </style>
 
-    <style name="Theme.CourseSchedule.ActionBar" parent="Widget.AppCompat.ActionBar">
-        <item name="android:background">?attr/colorPrimary</item>
-        <item name="background">?attr/colorPrimary</item>
+    <style name="Theme.CourseSchedule.ActionBar" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="background">@color/purple_500</item>
+        <item name="titleTextStyle">@style/Theme.CourseSchedule.ActionBar.TitleText</item>
+    </style>
+
+    <style name="Theme.CourseSchedule.ActionBar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Theme.CourseSchedule.NoActionBar">
@@ -24,7 +28,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.CourseSchedule.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.CourseSchedule.AppBarOverlay" parent="ThemeOverlay.AppCompat" />
 
     <style name="Theme.CourseSchedule.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

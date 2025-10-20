@@ -1,9 +1,32 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.CourseSchedule" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.CourseSchedule" parent="Theme.MaterialComponents.DayNight">
         <!-- Transparent system bars for edge-to-edge. -->
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- ActionBar styling -->
+        <item name="actionBarStyle">@style/Theme.CourseSchedule.ActionBar</item>
+        <item name="actionBarTheme">@style/Theme.CourseSchedule.ActionBarTheme</item>
+    </style>
+
+    <style name="Theme.CourseSchedule.ActionBar" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="background">@color/purple_500</item>
+        <item name="titleTextStyle">@style/Theme.CourseSchedule.ActionBar.TitleText</item>
+        <item name="subtitleTextStyle">@style/Theme.CourseSchedule.ActionBar.TitleText</item>
+    </style>
+
+    <style name="Theme.CourseSchedule.ActionBar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Theme.CourseSchedule.ActionBarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
     </style>
 </resources>
