@@ -39,7 +39,7 @@ class ListActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val factory = ListViewModelFactory.createFactory(this)
-        viewModel = ViewModelProvider(this, factory).get(ListViewModel::class.java)
+        viewModel = ViewModelProvider(this, factory)[ListViewModel::class.java]
 
         setFabClick()
         setUpRecycler()

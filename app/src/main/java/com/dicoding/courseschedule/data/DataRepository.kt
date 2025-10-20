@@ -23,13 +23,12 @@ class DataRepository(private val dao: CourseDao) {
 
     fun getAllCourse(sortType: SortType): LiveData<PagingData<Course>> {
         val sort = sortedQuery(sortType)
-        val courses = dao.getAll(sort)
         return Pager(
             config = PagingConfig(
                 pageSize = PAGE_SIZE,
                 enablePlaceholders = false
             ),
-            pagingSourceFactory = { courses }
+            pagingSourceFactory = { dao.getAll(sort) }
         ).liveData
     }
 

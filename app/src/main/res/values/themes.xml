@@ -11,7 +11,12 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="actionBarStyle">@style/Theme.CourseSchedule.ActionBar</item>
+    </style>
+
+    <style name="Theme.CourseSchedule.ActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="background">?attr/colorPrimary</item>
     </style>
 
     <style name="Theme.CourseSchedule.NoActionBar">
